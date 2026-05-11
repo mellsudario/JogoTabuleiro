@@ -5,11 +5,13 @@ public class Casa10 extends Casa {
         super(numCasa);
     }
 
-    public int entrarNaCasa(Jogador jogador){
+    @Override
+    public void entrarNaCasa(Jogador jogador){
         if(!jogadores.contains(jogador)){
             jogadores.add(jogador);
         }
         /*se o competidor parar em uma dessas 
         casa, ele não joga a próxima rodada; */
+        jogador.setVaiJogar(false);
     }
 }

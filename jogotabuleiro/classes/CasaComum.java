@@ -6,9 +6,11 @@ public class CasaComum extends Casa {
         super(numCasa);
     }
 
+    @Override
     public int entrarNaCasa(Jogador jogador){
         if(!jogadores.contains(jogador)){
             jogadores.add(jogador);
         }
+        return 0;
     }
 }

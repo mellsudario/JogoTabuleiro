@@ -6,9 +6,20 @@ public class Casa5 extends Casa{
         super(numCasa);
     }
 
-    public int entrarNaCasa(Jogador jogador){
+    @Override
+    public void entrarNaCasa(Jogador jogador){
         /*casas da sorte: ande 3 casas para 
         frente desde que ele não seja um jogador azarado; */
+        if(jogador instanceof JogadorAzarado){
+            if(!jogadores.contains(jogador)){
+                jogadores.add(jogador);
+            }
+            return;
+        }
+        int novaPosicao = jogador.getPosicao();
+        novaPosicao +=3;
+        jogador.setPosicao(novaPosicao);// tem que fazer entrar na nova casa, usar 
+        
     }
  
 }

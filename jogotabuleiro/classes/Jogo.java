@@ -28,6 +28,7 @@ public class Jogo {
             return false;
 
         jogadores.add(novoJogador);
+        tabulerio.incluirJogador(novoJogador);
         return true;
     }
 }

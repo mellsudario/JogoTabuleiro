@@ -1,11 +1,9 @@
 package jogotabuleiro.classes;
 
 public class Tabuleiro {
-    protected int id;
     protected Casa [] casas = new Casa [41];
 
     public Tabuleiro(){
-
         criarCasas();
     }
 
@@ -36,11 +34,12 @@ public class Tabuleiro {
     }
 
     public void incluirJogador(Jogador jogador){
-
+        casas[0].entrarNaCasa(jogador);
     }
 
     public void moverJogador(Jogador jogador, int casaAnterior ,int novaCasa){
-
+        casas[casaAnterior].sairDaCasa(jogador);
+        casas[novaCasa].entrarNaCasa(jogador);// tem mais
     }
 
 }

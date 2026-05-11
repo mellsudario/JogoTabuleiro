@@ -5,6 +5,7 @@ public class Casa17 extends Casa {
         super(numCasa);
     }
 
+    @Override
     public int entrarNaCasa(Jogador jogador){
         if(!jogadores.contains(jogador)){
             jogadores.add(jogador);
@@ -12,4 +13,6 @@ public class Casa17 extends Casa {
         /*se o competidor parar em uma dessas 
         casas, ele escolhe um competidor para 
         voltar para o início do jogo. */
+        
+    }
 }
