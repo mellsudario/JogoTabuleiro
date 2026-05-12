@@ -11,7 +11,7 @@ public abstract class Casa {
         this.jogadores = new ArrayList<>();
     }
 
-    public abstract void entrarNaCasa(Jogador jogador);
+    public abstract int entrarNaCasa(Jogador jogador);
 
     public void sairDaCasa(Jogador jogador){
         if(jogadores.contains(jogador)){
