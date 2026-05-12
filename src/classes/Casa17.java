@@ -9,6 +9,7 @@ public class Casa17 extends Casa {
     public int entrarNaCasa(Jogador jogador){
         if(!jogadores.contains(jogador)){
             jogadores.add(jogador);
+            jogador.setPosicao(this.id);
         }
         /*se o competidor parar em uma dessas 
         casas, ele escolhe um competidor para 
