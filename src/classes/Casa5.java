@@ -10,10 +10,11 @@ public class Casa5 extends Casa{
     public void entrarNaCasa(Jogador jogador){
         /*casas da sorte: ande 3 casas para 
         frente desde que ele não seja um jogador azarado; */
+        if(!jogadores.contains(jogador)){
+            jogadores.add(jogador);
+            jogador.setPosicao(this.id);
+        }
         if(jogador instanceof JogadorAzarado){
-            if(!jogadores.contains(jogador)){
-                jogadores.add(jogador);
-            }
             return;
         }
         int novaPosicao = jogador.getPosicao();
