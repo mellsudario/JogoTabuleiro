@@ -55,6 +55,7 @@ public class Casa13 extends Casa {
 
         if(!jogadores.contains(jogador)){
             jogadores.add(jogador);
+            jogador.setPosicao(this.id);
         }
     }
 }
