@@ -1,4 +1,4 @@
-package classes;
+package jogotabuleiro.classes;
 
 import java.util.Random;
 
@@ -54,8 +54,8 @@ public class Casa13 extends Casa {
         }
 
         if(!jogadores.contains(jogador)){
+            jogador.setPosicao(this.numCasa);
             jogadores.add(jogador);
-            jogador.setPosicao(this.id);
         }
     }
 }

@@ -1,4 +1,4 @@
-package classes;
+package jogotabuleiro.classes;
 
 import java.util.ArrayList;
 

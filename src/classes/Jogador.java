@@ -1,4 +1,4 @@
-package classes;
+package jogotabuleiro.classes;
 
 public abstract class Jogador {
     protected int id;

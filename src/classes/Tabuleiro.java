@@ -1,4 +1,4 @@
-package classes;
+package jogotabuleiro.classes;
 
 public class Tabuleiro {
     protected Casa [] casas = new Casa [41];
@@ -39,8 +39,8 @@ public class Tabuleiro {
 
     public void moverJogador(Jogador jogador, int casaAnterior ,int novaCasa){
         casas[casaAnterior].sairDaCasa(jogador);
-        int casaAtual = casas[novaCasa].entrarNaCasa(jogador);// tem mais
-        
+        casas[novaCasa].entrarNaCasa(jogador);// tem mais
+
         if(casaAtual == novaCasa)
             return;
         

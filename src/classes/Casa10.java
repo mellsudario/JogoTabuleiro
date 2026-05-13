@@ -1,4 +1,4 @@
-package classes;
+package jogotabuleiro.classes;
 
 public class Casa10 extends Casa {
     public Casa10(int numCasa){
@@ -7,12 +7,12 @@ public class Casa10 extends Casa {
 
     @Override
     public void entrarNaCasa(Jogador jogador){
-        if(!jogadores.contains(jogador)){
-            jogadores.add(jogador);
-            jogador.setPosicao(this.id);
-        }
         /*se o competidor parar em uma dessas 
         casa, ele não joga a próxima rodada; */
         jogador.setVaiJogar(false);
+        if(!jogadores.contains(jogador)){
+            jogador.setPosicao(this.id);
+            jogadores.add(jogador);
+        }
     }
 }

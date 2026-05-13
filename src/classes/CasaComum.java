@@ -1,4 +1,4 @@
-package classes;
+package jogotabuleiro.classes;
 
 public class CasaComum extends Casa {
     
@@ -9,6 +9,7 @@ public class CasaComum extends Casa {
     @Override
     public int entrarNaCasa(Jogador jogador){
         if(!jogadores.contains(jogador)){
+            jogador.setPosicao(this.numCasa);
             jogadores.add(jogador);
         }
         return 0;

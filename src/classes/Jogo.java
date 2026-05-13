@@ -1,4 +1,4 @@
-package classes;
+package jogotabuleiro.classes;
 
 import java.util.ArrayList;
 
@@ -13,7 +13,7 @@ public class Jogo {
     }
 
     public String jogar(){
-        //?
+        
     }
 
     public void debug(){
@@ -28,7 +28,7 @@ public class Jogo {
             return false;
 
         jogadores.add(novoJogador);
-        tabuleiro.incluirJogador(novoJogador);
+        tabulerio.incluirJogador(novoJogador);
         return true;
     }
 }
