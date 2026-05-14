@@ -1,6 +1,7 @@
-package jogotabuleiro.classes;
+package classes;
 
 public class Casa10 extends Casa {
+	
     public Casa10(int numCasa){
         super(numCasa);
     }

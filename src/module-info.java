@@ -4,5 +4,6 @@
 /**
  * 
  */
-module jogotabuleiro {
+module JogoTabuleiro {
+    requires java.desktop;
 }

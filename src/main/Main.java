@@ -1,8 +1,9 @@
-package jogotabuleiro;
+package main;
+
 
 import javax.swing.JFrame;
 
-import jogotabuleiro.interfacegrafica.TabuleiroPanel;
+import TabuleiroPanel;
 
 public class Main {
     public static void main (String args[]){

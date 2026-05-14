@@ -1,10 +1,10 @@
-package jogotabuleiro.classes;
+package classes;
 
 import java.util.ArrayList;
 
 public class Jogo {
     Tabuleiro tabuleiro;
-    ArrayList <Jogadores> jogadores;
+    ArrayList <Jogador> jogadores;
 
     public Jogo(){
 

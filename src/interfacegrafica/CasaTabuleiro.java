@@ -1,4 +1,4 @@
-package jogotabuleiro.interfacegrafica;
+package interfacegrafica;
 
 public class CasaTabuleiro {
     int x;

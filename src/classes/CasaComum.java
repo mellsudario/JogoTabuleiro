@@ -1,4 +1,4 @@
-package jogotabuleiro.classes;
+package classes;
 
 public class CasaComum extends Casa {
     

@@ -1,4 +1,4 @@
-package jogotabuleiro.interfacegrafica;
+package interfacegrafica;
 
 
 import java.awt.Color;

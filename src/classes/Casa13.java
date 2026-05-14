@@ -1,4 +1,4 @@
-package jogotabuleiro.classes;
+package classes;
 
 import java.util.Random;
 
