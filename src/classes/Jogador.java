@@ -59,9 +59,4 @@ public abstract class Jogador {
 			return false;
 		return ((Jogador) obj).id == this.id;
 	}
-
-	@Override
-	public String toString() {
-		return cor + " (casa " + posicao + ")";
-	}
 }
