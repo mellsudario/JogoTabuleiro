@@ -46,7 +46,7 @@ public class Tabuleiro {
 
 	 public void moverJogador(Jogador jogador, int casaAnterior ,int novaCasa){
 	        casas[casaAnterior].sairDaCasa(jogador);
-	        casas[novaCasa].entrarNaCasa(jogador);// tem mais
+	        casas[novaCasa].entrarNaCasa(jogador, new ArrayList<>());// tem mais
 
 	        if(casaAtual == novaCasa)
 	            return;

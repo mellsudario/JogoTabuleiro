@@ -1,5 +1,6 @@
 package classes;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Casa13 extends Casa {
@@ -8,7 +9,7 @@ public class Casa13 extends Casa {
     }
 
     @Override
-    public void entrarNaCasa(Jogador jogador){
+    public void entrarNaCasa (Jogador jogador, ArrayList<Jogador> jogadores){
         Random random = new Random();
 
         /*casa surpresa, o jogador deve tirar 

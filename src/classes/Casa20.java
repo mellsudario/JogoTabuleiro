@@ -11,7 +11,7 @@ public class Casa20 extends Casa {
     }
 
     @Override
-    public int entrarNaCasa(Jogador jogador, ArrayList<Jogador> jogadores) {
+    public void entrarNaCasa(Jogador jogador, ArrayList<Jogador> jogadores) {
 
         if (!jogadores.contains(jogador)) {
             jogadores.add(jogador);
@@ -54,7 +54,5 @@ public class Casa20 extends Casa {
                     jogador.getCor() + " trocou de lugar com "
                             + ultimo.getCor() + "!");
         }
-
-        return jogador.getPosicao();
     }
 }

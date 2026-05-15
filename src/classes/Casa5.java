@@ -1,5 +1,7 @@
 package classes;
 
+import java.util.ArrayList;
+
 public class Casa5 extends Casa{
     
     public Casa5(int numCasa){
@@ -7,7 +9,7 @@ public class Casa5 extends Casa{
     }
 
     @Override
-    public void entrarNaCasa(Jogador jogador){
+    public void entrarNaCasa (Jogador jogador, ArrayList<Jogador> jogadores){
         /*casas da sorte: ande 3 casas para 
         frente desde que ele não seja um jogador azarado; */
         if(jogador instanceof JogadorAzarado){

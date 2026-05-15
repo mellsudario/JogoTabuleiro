@@ -1,5 +1,7 @@
 package classes;
 
+import java.util.ArrayList;
+
 public class Casa10 extends Casa {
 	
     public Casa10(int numCasa){
@@ -7,7 +9,7 @@ public class Casa10 extends Casa {
     }
 
     @Override
-    public void entrarNaCasa(Jogador jogador){
+    public void entrarNaCasa (Jogador jogador, ArrayList<Jogador> jogadores){
         /*se o competidor parar em uma dessas 
         casa, ele não joga a próxima rodada; */
         jogador.setVaiJogar(false);

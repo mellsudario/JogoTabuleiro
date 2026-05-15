@@ -11,7 +11,7 @@ public class Casa17 extends Casa {
 	}
 
 	@Override
-	public int entrarNaCasa(Jogador jogador, ArrayList<Jogador> jogadores) {
+	public void entrarNaCasa (Jogador jogador, ArrayList<Jogador> jogadores) {
 
 		if (!jogadores.contains(jogador)) {
 			jogador.setPosicao(this.numCasa);
@@ -50,6 +50,5 @@ public class Casa17 extends Casa {
 			}
 		}
 
-		return jogador.getPosicao();
 	}
 }
