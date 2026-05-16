@@ -44,14 +44,17 @@ public class Tabuleiro {
 		casas[0].entrarNaCasa(jogador, new ArrayList<>());
 	}
 
-	 public void moverJogador(Jogador jogador, int casaAnterior ,int novaCasa){
-	        casas[casaAnterior].sairDaCasa(jogador);
-	        casas[novaCasa].entrarNaCasa(jogador, new ArrayList<>());// tem mais
-
-	        if(casaAtual == novaCasa)
-	            return;
-	        
-	        moverJogador(jogador,novaCasa,casaAtual);
-	    }
-
-	}
+	
+    public void moverJogador(Jogador jogador, ArrayList<Jogador> jogadores, int novaCasa) {
+        int casaAnterior = jogador.getPosicao();
+ 
+        casas[casaAnterior].sairDaCasa(jogador);
+        casas[novaCasa].entrarNaCasa(jogador, jogadores);
+ 
+      
+        int posicaoAposEfeito = jogador.getPosicao();
+        if (posicaoAposEfeito != novaCasa && posicaoAposEfeito < casas.length) {
+            moverJogador(jogador, jogadores, posicaoAposEfeito);
+        }
+    }
+}

@@ -12,16 +12,10 @@ public class JogadorAzarado extends Jogador {
 
     @Override
     public int jogarDados() {
-        int soma;
-
         do {
-            int d1 = random.nextInt(6) + 1;
-            int d2 = random.nextInt(6) + 1;
-
-            soma = d1 + d2;
-
-        } while(soma > 6);
-
-        return soma;
+            dado1 = random.nextInt(6) + 1;
+            dado2 = random.nextInt(6) + 1;
+        } while (dado1 + dado2 > 6);
+        return dado1 + dado2;
     }
 }

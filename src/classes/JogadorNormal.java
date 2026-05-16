@@ -12,9 +12,8 @@ public class JogadorNormal extends Jogador {
 
     @Override
     public int jogarDados() {
-        int d1 = random.nextInt(6) + 1;
-        int d2 = random.nextInt(6) + 1;
-
-        return d1 + d2;
+        dado1 = random.nextInt(6) + 1;
+        dado2 = random.nextInt(6) + 1;
+        return dado1 + dado2;
     }
 }

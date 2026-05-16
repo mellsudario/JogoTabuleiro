@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
-import jogotabuleiro.classes.Casa;
+import classes.Casa;
 
 public class TabuleiroPanel extends JPanel{
     private class Peca{

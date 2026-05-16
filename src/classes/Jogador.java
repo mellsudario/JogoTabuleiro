@@ -6,7 +6,8 @@ public abstract class Jogador {
 	protected int posicao;
 	protected boolean vaiJogar;
 	protected int quantJogadas;
-	  //talvez criar atributos aqui para fazer a casas especiais funcionarem
+	protected int dado1;
+	protected int dado2;
 
 	public Jogador(int id, String cor) {
 		this.id = id;
@@ -36,6 +37,14 @@ public abstract class Jogador {
 		return quantJogadas;
 	}
 
+	public int getDado1() {
+		return dado1;
+	}
+
+	public int getDado2() {
+		return dado2;
+	}
+
 	public void setPosicao(int posicao) {
 		this.posicao = posicao;
 	}
@@ -48,7 +57,6 @@ public abstract class Jogador {
 		this.quantJogadas++;
 	}
 
-	
 	public abstract int jogarDados();
 
 	@Override

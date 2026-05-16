@@ -14,7 +14,7 @@ public class Casa10 extends Casa {
         casa, ele não joga a próxima rodada; */
         jogador.setVaiJogar(false);
         if(!jogadores.contains(jogador)){
-            jogador.setPosicao(this.id);
+            jogador.setPosicao(this.numCasa);
             jogadores.add(jogador);
         }
     }
