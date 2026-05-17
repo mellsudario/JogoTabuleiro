@@ -1,6 +1,7 @@
 package classes;
 
 import java.util.ArrayList;
+
 import javax.swing.JOptionPane;
 
 public class Casa5 extends Casa {
@@ -15,25 +16,21 @@ public class Casa5 extends Casa {
 		 * casas da sorte: ande 3 casas para frente desde que ele não seja um jogador
 		 * azarado;
 		 */
+		
+		jogador.setPosicao(this.numCasa);
+		if (!this.jogadores.contains(jogador)) {
+			this.jogadores.add(jogador);
+		}
+
+		// azarado não avança
 		if (jogador instanceof JogadorAzarado) {
-			if (!jogadores.contains(jogador)) {
-				jogador.setPosicao(this.numCasa);
-				jogadores.add(jogador);
-			}
 			JOptionPane.showMessageDialog(null,
-					jogador.getCor() + " caiu na casa da sorte " + this.numCasa + ", mas por ser Azarado não avança!");
+					jogador.getCor() + " caiu na casa da sorte, mas é azarado e não avançou!");
 			return;
 		}
 
-		if (!jogadores.contains(jogador)) {
-			jogadores.add(jogador);
-		}
-
 		int novaPosicao = this.numCasa + 3;
-		JOptionPane.showMessageDialog(null, jogador.getCor() + " caiu na casa da sorte " + this.numCasa
-				+ " e avança 3 casas para a casa " + novaPosicao + "!");
-
-		jogadores.remove(jogador);
+		JOptionPane.showMessageDialog(null, jogador.getCor() + " avançou 3 casas!");
 		jogador.setPosicao(novaPosicao);
 	}
 }

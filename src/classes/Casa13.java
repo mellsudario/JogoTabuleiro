@@ -3,6 +3,8 @@ package classes;
 import java.util.ArrayList;
 import java.util.Random;
 
+import javax.swing.JOptionPane;
+
 public class Casa13 extends Casa {
 
 	public Casa13(int numCasa) {
@@ -11,71 +13,57 @@ public class Casa13 extends Casa {
 
 	@Override
 	public void entrarNaCasa(Jogador jogador, ArrayList<Jogador> jogadores) {
-		Random random = new Random();
 
 		/*
 		 * casa surpresa, o jogador deve tirar uma carta aleatória que o fará mudar de
 		 * tipo de jogador de acordo com a carta.
 		 */
-		int carta = random.nextInt(2); // 0 ou 1
-
+		
+		jogador.setPosicao(this.numCasa);
+		Random random = new Random();
+		int carta = random.nextInt(2);
 		Jogador novoJogador = null;
 
 		if (jogador instanceof JogadorAzarado) {
-			switch (carta) {
-			case 0:
-				novoJogador = new JogadorNormal(jogador.getId(), jogador.getCor());
-				break;
-			case 1:
-				novoJogador = new JogadorSortudo(jogador.getId(), jogador.getCor());
-				break;
-			}
-			
-		} else if (jogador instanceof JogadorSortudo) {
-			switch (carta) {
-			case 0:
-				novoJogador = new JogadorNormal(jogador.getId(), jogador.getCor());
-				break;
-			case 1:
-				novoJogador = new JogadorAzarado(jogador.getId(), jogador.getCor());
-				break;
-			}
-		} else {
-			
-			// JogadorNormal
-			switch (carta) {
-			case 0:
-				novoJogador = new JogadorAzarado(jogador.getId(), jogador.getCor());
-				break;
-			case 1:
-				novoJogador = new JogadorSortudo(jogador.getId(), jogador.getCor());
-				break;
-			}
-		}
 
-		if (novoJogador != null) {
-			// copia estado do jogador antigo
-			novoJogador.setPosicao(this.numCasa);
-			novoJogador.setVaiJogar(jogador.getVaiJogar());
-
-			// substitui na lista local desta casa
-			int idxLocal = this.jogadores.indexOf(jogador);
-			if (idxLocal >= 0) {
-				this.jogadores.set(idxLocal, novoJogador);
+			if (carta == 0) {
+				novoJogador = new JogadorNormal(jogador.getId(), jogador.getCor());
 			} else {
-				this.jogadores.add(novoJogador);
+				novoJogador = new JogadorSortudo(jogador.getId(), jogador.getCor());
 			}
 
-			// substitui na lista global passada pelo Tabuleiro
-			int idxGlobal = jogadores.indexOf(jogador);
-			if (idxGlobal >= 0) {
-				jogadores.set(idxGlobal, novoJogador);
+		} else if (jogador instanceof JogadorSortudo) {
+			if (carta == 0) {
+				novoJogador = new JogadorNormal(jogador.getId(), jogador.getCor());
+			} else {
+				novoJogador = new JogadorAzarado(jogador.getId(), jogador.getCor());
 			}
 		} else {
-			if (!jogadores.contains(jogador)) {
-				jogador.setPosicao(this.numCasa);
-				jogadores.add(jogador);
+
+			if (carta == 0) {
+				novoJogador = new JogadorAzarado(jogador.getId(), jogador.getCor());
+			} else {
+				novoJogador = new JogadorSortudo(jogador.getId(), jogador.getCor());
 			}
 		}
+
+		novoJogador.setPosicao(jogador.getPosicao());
+		int indice = jogadores.indexOf(jogador);
+		jogadores.set(indice, novoJogador);
+
+		String novoTipo = "";
+		if (novoJogador instanceof JogadorSortudo) {
+			novoTipo = "Sortudo";
+		}
+
+		else if (novoJogador instanceof JogadorAzarado) {
+			novoTipo = "Azarado";
+		}
+
+		else {
+			novoTipo = "Normal";
+		}
+
+		JOptionPane.showMessageDialog(null, jogador.getCor() + " mudou de tipo!\nNovo tipo: " + novoTipo);
 	}
 }

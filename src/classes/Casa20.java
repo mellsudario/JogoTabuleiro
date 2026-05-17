@@ -12,40 +12,30 @@ public class Casa20 extends Casa {
 
 	@Override
 	public void entrarNaCasa(Jogador jogador, ArrayList<Jogador> jogadores) {
-
-		if (!jogadores.contains(jogador)) {
-			jogadores.add(jogador);
-		}
-
 		/*
 		 * Casas mágicas: troca de lugar com o jogador mais atrás no jogo.
 		 */
+		
+		jogador.setPosicao(this.numCasa);
+		if (!this.jogadores.contains(jogador)) {
+			this.jogadores.add(jogador);
+		}
 
 		Jogador ultimo = jogador;
-
-		// procura o jogador mais atrás
 		for (Jogador j : jogadores) {
-
 			if (j.getPosicao() < ultimo.getPosicao()) {
 				ultimo = j;
 			}
 		}
 
-		// verifica se o próprio jogador já é o último
 		if (ultimo == jogador) {
-
-			JOptionPane.showMessageDialog(null, jogador.getCor() + " já está em último lugar!");
+			JOptionPane.showMessageDialog(null, jogador.getCor() + " já está em último!");
 
 		} else {
-
-			// guarda posição original
 			int posicaoAtual = jogador.getPosicao();
-
-			// troca posições
 			jogador.setPosicao(ultimo.getPosicao());
 			ultimo.setPosicao(posicaoAtual);
-
-			JOptionPane.showMessageDialog(null, jogador.getCor() + " trocou de lugar com " + ultimo.getCor() + "!");
+			JOptionPane.showMessageDialog(null, jogador.getCor() + " trocou de lugar com " + ultimo.getCor());
 		}
 	}
 }
