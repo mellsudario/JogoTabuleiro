@@ -56,19 +56,14 @@ public class Jogo {
 
 				// perde rodada
 				if (!jogador.getVaiJogar()) {
-
 					JOptionPane.showMessageDialog(null, jogador.getCor() + " perdeu esta rodada!");
-
 					jogador.setVaiJogar(true);
-
 					continue;
 				}
 
 				// mostra posições
 				String mensagem = "POSIÇÕES ATUAIS\n\n";
-
 				for (Jogador j : jogadores) {
-
 					mensagem += j.getCor() + " está na casa " + j.getPosicao() + "\n";
 				}
 
@@ -79,7 +74,6 @@ public class Jogo {
 				do {
 
 					jogarNovamente = false;
-
 					int soma;
 
 					// DEBUG
@@ -87,7 +81,7 @@ public class Jogo {
 
 						String entrada = JOptionPane.showInputDialog(null,
 								"Digite a casa para onde o jogador deve ir:");
-
+						
 						int destino = Integer.parseInt(entrada);
 						soma = destino - jogador.getPosicao();
 
@@ -105,8 +99,8 @@ public class Jogo {
 					jogador.incrementarJogadas();
 					int novaCasa = jogador.getPosicao() + soma;
 					tabuleiro.moverJogador(jogador, jogadores, novaCasa);
-					atualizarPainel(jogador);
-					jogador = jogadores.get(i);
+					atualizarTodosJogadores(); // casa 17
+					jogador = jogadores.get(i); //casa 13
 					JOptionPane.showMessageDialog(null, jogador.getCor() + " foi para a casa " + jogador.getPosicao());
 
 					// vitória
@@ -165,6 +159,13 @@ public class Jogo {
 		}
 
 		painel.moverJogador(jogador.getPosicao(), cor);
+	}
+
+	private void atualizarTodosJogadores() {
+
+		for (Jogador jogador : jogadores) {
+			atualizarPainel(jogador);
+		}
 	}
 
 	public void debug() {

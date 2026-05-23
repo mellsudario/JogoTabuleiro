@@ -1,7 +1,6 @@
 package interfacegrafica;
 
 import java.awt.*;
-import java.awt.geom.*;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 
@@ -10,8 +9,8 @@ public class TabuleiroPanel extends JPanel {
 	ArrayList<CasaPainel> trilha;
 	ArrayList<Peca> pecas;
 
-	private static final Color[][] CORES_LINHA = { { new Color(179, 229, 252), new Color(2, 136, 209) }, // linha 0 -
-																											// azul
+	private static final Color[][] CORES_LINHA = { 
+			{ new Color(179, 229, 252), new Color(2, 136, 209) }, // linha 0 - azul
 			{ new Color(200, 230, 201), new Color(56, 142, 60) }, // linha 1 - verde
 			{ new Color(255, 224, 178), new Color(230, 81, 0) }, // linha 2 - laranja
 			{ new Color(225, 190, 231), new Color(123, 31, 162) }, // linha 3 - roxo
@@ -20,8 +19,6 @@ public class TabuleiroPanel extends JPanel {
 	private static final Color COR_START_BORDA = new Color(249, 168, 37);
 	private static final Color COR_FIM_FUNDO = new Color(239, 154, 154);
 	private static final Color COR_FIM_BORDA = new Color(198, 40, 40);
-	private static final Color FUNDO_PAINEL = new Color(200, 230, 200);
-	private static final Color PONTO_GRADE = new Color(255, 255, 255, 60);
 
 	private static final int R = 37; // raio da casa
 	private static final int D = R * 2;
@@ -62,8 +59,8 @@ public class TabuleiroPanel extends JPanel {
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		Graphics2D g2 = (Graphics2D) g;
-		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-		g2.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON); // suaviza bordas
+		g2.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON); // qualidade das letras
 
 		desenharFundo(g2);
 		desenharTrilha(g2);
@@ -76,10 +73,6 @@ public class TabuleiroPanel extends JPanel {
 		g2.setPaint(grad);
 		g2.fillRoundRect(0, 0, getWidth(), getHeight(), 20, 20);
 
-		g2.setColor(PONTO_GRADE);
-		for (int x = 15; x < getWidth(); x += 30)
-			for (int y = 15; y < getHeight(); y += 30)
-				g2.fillOval(x - 1, y - 1, 3, 3);
 	}
 
 	private void desenharTrilha(Graphics2D g2) {
